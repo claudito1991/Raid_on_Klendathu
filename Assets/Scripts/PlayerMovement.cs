@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem playerExplosion;
     public Transform playerPosition;
+    public static Action playerExploded;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +47,16 @@ public class PlayerMovement : MonoBehaviour
             transform.localPosition.z);
     }
 
-    void OnDisable()
+    public void PlayerExplosion()
     {
+        playerExploded?.Invoke();
         playerExplosion.transform.position = playerPosition.position;
         playerExplosion.Play();
+    }
+
+    void OnDisable()
+    {
+       // playerExplosion.transform.position = playerPosition.position;
+        //playerExplosion.Play();
     }
 }

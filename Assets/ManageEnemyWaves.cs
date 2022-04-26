@@ -29,7 +29,6 @@ public class ManageEnemyWaves : MonoBehaviour
         float probabilidadAparicion = 1-(distancia/initialDistance);
         var cantidadAleatoria = UnityEngine.Random.Range(5,15);
         float numeroCalculado = (cantidadAleatoria * probabilidadAparicion) + 1;
-        Debug.Log(probabilidadAparicion);
         return numeroCalculado;
     }
 

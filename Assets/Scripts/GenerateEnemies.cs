@@ -47,9 +47,14 @@ public class GenerateEnemies : MonoBehaviour
         enemyQuantity = enemyWaves.CantidadASpawnear();
         for (int i=0; i<enemyQuantity;i++)
         {
-            var enemy = Instantiate(enemyModel,RandomPointInBounds(enemyCollider.bounds), Quaternion.identity);
-            var targetRotation = Quaternion.LookRotation(enemySpawner.transform.forward, Vector3.up);
-            enemy.transform.rotation  = targetRotation;
+            GameObject enemy = EnemyPooler.current.GetPooledObject();
+            if(enemy == null) return;
+            enemy.transform.position = RandomPointInBounds(enemyCollider.bounds);
+            enemy.transform.rotation = enemySpawner.transform.rotation;
+            enemy.SetActive(true);
+            //var enemy = Instantiate(enemyModel,RandomPointInBounds(enemyCollider.bounds), Quaternion.identity);
+            //var targetRotation = Quaternion.LookRotation(enemySpawner.transform.forward, Vector3.up);
+            //enemy.transform.rotation  = targetRotation;
         }
 
 

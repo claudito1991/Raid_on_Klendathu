@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 10
+  enemyDamage: 100
+  player: {fileID: 0}
 --- !u!65 &6984052154187053677
 BoxCollider:
   m_ObjectHideFlags: 0

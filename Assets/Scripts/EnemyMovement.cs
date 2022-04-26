@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyMovement : MonoBehaviour
 {
     public float enemySpeed = 10f;
+    public int enemyDamage =10;
+
+    public PlayerMovement player;
+    public static Action<int> enemyCatched;
+    
      // Move the object forward along its z axis 1 unit/second.
       
 
@@ -12,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<PlayerMovement>().GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -26,8 +32,14 @@ public class EnemyMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player hit");
+            player.PlayerExplosion();
             other.gameObject.SetActive(false);
+        }
+
+        if(other.gameObject.CompareTag("catcher"))
+        {
+            enemyCatched?.Invoke(enemyDamage);
+            gameObject.SetActive(false);
         }
     }
 }

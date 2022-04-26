@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyPooler : MonoBehaviour
+{
+  public static EnemyPooler current;
+    public GameObject pooledEnemy;
+    public int pooledAmount;
+    public bool willGrow;
+    private List<GameObject> pooledObjects;
+
+    void Awake()
+    {
+        current = this;
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        pooledObjects = new List<GameObject>();
+        for (int i =0; i<pooledAmount; i++)
+        {
+            GameObject obj = Instantiate(pooledEnemy);
+            obj.SetActive(false);
+            pooledObjects.Add(obj);
+        }
+    }
+
+    public GameObject GetPooledObject()
+    {
+        for (int i = 0; i<pooledObjects.Count;i++)
+        {
+            if(!pooledObjects[i].activeInHierarchy)
+            {
+                return pooledObjects[i];
+            }
+        }
+
+        if(willGrow)
+        {
+            GameObject obj = Instantiate(pooledEnemy);
+            pooledObjects.Add(obj);
+            return obj;
+        }
+        return null;
+
+    }
+    // Update is called once per frame
+}
