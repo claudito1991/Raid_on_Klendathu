@@ -44,7 +44,7 @@ public class GenerateEnemies : MonoBehaviour
 
     public void EnemyGeneration()
     {
-        enemyQuantity = enemyWaves.NumeroRaro();
+        enemyQuantity = enemyWaves.CantidadASpawnear();
         for (int i=0; i<enemyQuantity;i++)
         {
             var enemy = Instantiate(enemyModel,RandomPointInBounds(enemyCollider.bounds), Quaternion.identity);

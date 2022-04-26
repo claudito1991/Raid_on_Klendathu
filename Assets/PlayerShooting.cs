@@ -9,6 +9,10 @@ public class PlayerShooting : MonoBehaviour
     public Transform LeftFirePointPosition;
     public Transform RightFirePointPosition;
 
+    public ParticleSystem LeftMuzzleFlash;
+    
+    public ParticleSystem RightMuzzleFlash;
+
     public bool isFirePointLeft;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +35,7 @@ public class PlayerShooting : MonoBehaviour
            obj.transform.position = LeftFirePointPosition.position;
            obj.transform.rotation = LeftFirePointPosition.rotation;
            obj.SetActive(true);
+           LeftMuzzleFlash.Play();
            isFirePointLeft=false;
            }   
 
@@ -39,6 +44,7 @@ public class PlayerShooting : MonoBehaviour
            obj.transform.position = RightFirePointPosition.position;
            obj.transform.rotation = RightFirePointPosition.rotation;
            obj.SetActive(true);
+           RightMuzzleFlash.Play();
            isFirePointLeft=true;
            }
 

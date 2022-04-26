@@ -20,4 +20,14 @@ public class EnemyMovement : MonoBehaviour
     {
           transform.Translate(Vector3.forward * Time.deltaTime*enemySpeed);
     }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("player hit");
+            other.gameObject.SetActive(false);
+        }
+    }
 }

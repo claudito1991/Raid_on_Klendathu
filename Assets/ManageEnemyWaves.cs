@@ -13,7 +13,7 @@ public class ManageEnemyWaves : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialDistance = DistanceChecker();
+        initialDistance = Vector3.Distance(playerTransform.position,klendathuTransform.position);
     }
 
     // Update is called once per frame
@@ -26,11 +26,19 @@ public class ManageEnemyWaves : MonoBehaviour
     public float DistanceChecker()
     {
         float distancia = Vector3.Distance(playerTransform.position,klendathuTransform.position);
-        return distancia;
+        float probabilidadAparicion = 1-(distancia/initialDistance);
+        var cantidadAleatoria = UnityEngine.Random.Range(5,15);
+        float numeroCalculado = (cantidadAleatoria * probabilidadAparicion) + 1;
+        Debug.Log(probabilidadAparicion);
+        return numeroCalculado;
     }
 
-    public int NumeroRaro()
+    public int CantidadASpawnear()
     {
-        return Mathf.RoundToInt(initialDistance-DistanceChecker())%10;
+        int cantidadASpawnear = Mathf.RoundToInt(DistanceChecker());
+
+        return cantidadASpawnear;
     }
+
+
 }

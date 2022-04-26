@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f;
     public float rangeX = 3.5f;
     public float rangeY=5f;
+
+    public ParticleSystem playerExplosion;
+    public Transform playerPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +43,11 @@ public class PlayerMovement : MonoBehaviour
             clampedXPos,
             clampedYPos,
             transform.localPosition.z);
+    }
+
+    void OnDisable()
+    {
+        playerExplosion.transform.position = playerPosition.position;
+        playerExplosion.Play();
     }
 }
