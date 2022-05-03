@@ -8,6 +8,8 @@ public class ProjectileMovement : MonoBehaviour
 
     public ParticleSystem explosionEnemigo;
     public float projectileSpeed;
+
+    public List<string> targetTags;
     
     void OnEnable()
     {
@@ -36,7 +38,9 @@ public class ProjectileMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
         
     {
-        if(other.CompareTag("enemy"))
+        foreach(string tag in targetTags)
+        {
+             if(other.CompareTag(tag))
         {
             Instantiate(explosionEnemigo, other.transform.position, other.transform.rotation);
          
@@ -44,6 +48,8 @@ public class ProjectileMovement : MonoBehaviour
             
             Debug.Log("collision");
         }
+        }
+       
     }
 
 }

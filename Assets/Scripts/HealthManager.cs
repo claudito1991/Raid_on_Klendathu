@@ -21,6 +21,6 @@ public class HealthManager : MonoBehaviour
     public void SetHealth(int health)
     {
         slider.value = health;
-        Debug.Log("function called");
+        //Debug.Log("function called");
     }
 }
