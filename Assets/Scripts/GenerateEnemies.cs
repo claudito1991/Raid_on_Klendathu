@@ -19,13 +19,13 @@ public class GenerateEnemies : MonoBehaviour
     void Start()
     {
         //enemyCollider = enemyModel.GetComponent<Collider>();
-        StartCoroutine(GenerateEnemiesOverTime());
+        //StartCoroutine(GenerateEnemiesOverTime());
     }
 
     // Update is called once per frame
     void Update()
     {
-        GenerateEnemiesWithTimer();
+       // GenerateEnemiesWithTimer();
       //StartCoroutine(GenerateEnemiesOverTime());
     }
     IEnumerator GenerateEnemiesOverTime()
@@ -58,6 +58,11 @@ public class GenerateEnemies : MonoBehaviour
         }
 
 
+    }
+
+    public void GenerateEnemiesWithSignals()
+    {
+        EnemyGeneration();
     }
 
     Vector3 GetRandomPointInCollider()

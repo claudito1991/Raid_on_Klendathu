@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ProjectileMovement : MonoBehaviour
 {
+    public static Action PlayerHitted;
     public GameObject bullet;
 
     public ParticleSystem explosionEnemigo;
@@ -39,16 +41,20 @@ public class ProjectileMovement : MonoBehaviour
         
     {
         foreach(string tag in targetTags)
-        {
+        
              if(other.CompareTag(tag))
         {
             Instantiate(explosionEnemigo, other.transform.position, other.transform.rotation);
-         
+
             other.gameObject.SetActive(false);
             
-            Debug.Log("collision");
+            if(tag == "Player")
+            {
+                PlayerHitted?.Invoke();
+            }
+            
         }
-        }
+        
        
     }
 

@@ -16,6 +16,7 @@ void OnEnable()
     ConvoyDamage.loseConditionTrue += Lose;
     WinSingal.winCondition += Winning;
     PlayerMovement.playerExploded += Lose;
+    ProjectileMovement.PlayerHitted +=Lose;
     }
 
     void Lose()
@@ -34,7 +35,9 @@ void OnEnable()
 
     void OnDisable()
     {
-      ConvoyDamage.loseConditionTrue -= Lose;
-      WinSingal.winCondition -= Winning;  
+        ConvoyDamage.loseConditionTrue -= Lose;
+        WinSingal.winCondition -= Winning;  
+        PlayerMovement.playerExploded -= Lose;
+        ProjectileMovement.PlayerHitted -=Lose;
     }
 }
