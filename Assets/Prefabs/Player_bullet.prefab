@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3010992191884806720}
   - component: {fileID: 3010992191884806723}
   - component: {fileID: 8068666434904286789}
+  - component: {fileID: 1112660362700362390}
   m_Layer: 6
   m_Name: Player_bullet
   m_TagString: Untagged
@@ -91,6 +92,19 @@ SortingGroup:
   m_SortingLayerID: 1230632093
   m_SortingLayer: 1
   m_SortingOrder: 1000
+--- !u!114 &1112660362700362390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010992191884806722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52e70206931d63439786b4659083d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4827575041627086831}
 --- !u!1 &3010992192368814040
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +246,7 @@ TrailRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 2
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
@@ -261,10 +275,10 @@ TrailRenderer:
   m_SortingLayerID: -921849905
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Time: 0.25
+  m_Time: 0.15
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.25
+    widthMultiplier: 0.15
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -300,7 +314,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.18431373, g: 1, b: 1, a: 0.93333334}
+      key0: {r: 0.19607845, g: 1, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -334,5 +348,5 @@ TrailRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.05
-  m_Autodestruct: 1
+  m_Autodestruct: 0
   m_Emitting: 1
