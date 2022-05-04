@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3623613639549827443}
   explosionEnemigo: {fileID: 4252875116557948521, guid: 52685892f48ff254a844e1fc545f791e, type: 3}
-  projectileSpeed: 25
+  projectileSpeed: 30
   targetTags:
   - Player
   - enemy
