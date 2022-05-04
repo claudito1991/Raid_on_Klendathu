@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerShooting : MonoBehaviour
 {
+    public static Action PlayerShoots;
+
     public float coolDownTime = 0.2f;
-      public float currentTime;
-    public float currentLaserState;
-    public float maxLaserTemperature = 30f;
-    public float laserCoolingRate;
-    public float laserHeatingRate;
+    public float currentTime;
+
     public bool LaserIsOverheated;
 
-    public LaserStatusBarManager laserStatusBar;
+    //public LaserStatusBarManager laserStatusBar;
     public Transform LeftFirePointPosition;
     public Transform RightFirePointPosition;
 
@@ -24,37 +24,29 @@ public class PlayerShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        laserStatusBar.SetMaxTemp(maxLaserTemperature);
-        laserStatusBar.ImageColor(Color.blue);
+        //laserStatusBar.SetMaxTemp(maxLaserTemperature);
+        //laserStatusBar.ImageColor(Color.blue);
+    }
+    void OnEnable()
+    {
+        LaserStatusController.CantShoot += CheckLaserStatus;
+    }
+
+    void CheckLaserStatus(bool estado)
+    {
+        LaserIsOverheated = estado;
     }
 
     // Update is called once per frame
     void Update()
     {
-        laserStatusBar.SetTemp(currentLaserState);
-        
-        if(currentLaserState >= maxLaserTemperature)
-        {
-            currentLaserState = maxLaserTemperature;
-            StartCoroutine(LaserOverheated());
-            
-        }
-
-        else
+ 
+        if(!LaserIsOverheated)
         {
             PlayerFiringProcess();
-            laserStatusBar.ImageColor(Color.blue);
-            Debug.Log("Cooling");
-            currentLaserState -= Time.deltaTime * laserCoolingRate;
-
-            if(currentLaserState < 0)
-            {
-                currentLaserState = 0;
-            }
         }
-
         
-        Debug.Log(currentLaserState);
+     
     }
 
     private void PlayerFiringProcess()
@@ -62,8 +54,9 @@ public class PlayerShooting : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > coolDownTime && Input.GetMouseButton(0))
         {
+            PlayerShoots?.Invoke();
 
-            currentLaserState+=laserHeatingRate;
+    
             GameObject obj = BulletPooler.current.GetPooledObject();
             if (obj == null) return;
             if (isFirePointLeft)
@@ -89,12 +82,8 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    IEnumerator LaserOverheated()
+    void OnDisable()
     {
-        Debug.Log("Overheated");
-        laserStatusBar.ImageColor(Color.magenta);
-        yield return new WaitForSeconds(2f);
-        currentLaserState = maxLaserTemperature * 0.5f;
+         LaserStatusController.CantShoot -= CheckLaserStatus;
     }
-    
 }
