@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float rangeX = 3.5f;
     public float rangeY=5f;
 
+    public GameObject playerExplosionSFX;
     public ParticleSystem playerExplosion;
     public Transform playerPosition;
     public static Action playerExploded;
@@ -49,14 +50,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayerExplosion()
     {
+       
         playerExploded?.Invoke();
         playerExplosion.transform.position = playerPosition.position;
-        playerExplosion.Play();
+       
     }
 
     void OnDisable()
     {
        // playerExplosion.transform.position = playerPosition.position;
         //playerExplosion.Play();
+         playerExplosionSFX.SetActive(true);
     }
 }

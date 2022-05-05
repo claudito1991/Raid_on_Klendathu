@@ -7,6 +7,7 @@ public class ProjectileMovement : MonoBehaviour
 {
     public static Action PlayerHitted;
     public GameObject bullet;
+    public GameObject explosionSFX;
 
     public ParticleSystem explosionEnemigo;
     public float projectileSpeed;
@@ -45,6 +46,7 @@ public class ProjectileMovement : MonoBehaviour
              if(other.CompareTag(tag))
         {
             Instantiate(explosionEnemigo, other.transform.position, other.transform.rotation);
+            Instantiate(explosionSFX,other.transform.position, other.transform.rotation);
 
             other.gameObject.SetActive(false);
             

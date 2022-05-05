@@ -10,7 +10,9 @@ public class EnemyMovement : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+
     public Transform enemyFirepoint;
+
 
     private PlayerMovement player;
     public static Action<int> enemyCatched;
@@ -22,7 +24,6 @@ public class EnemyMovement : MonoBehaviour
      // Move the object forward along its z axis 1 unit/second.
       
 
-        
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +71,8 @@ public class EnemyMovement : MonoBehaviour
         }
         
     }
+
+ 
     bool FindPlayer()
 
     {     // Bit shift the index of the layer (8) to get a bit mask
