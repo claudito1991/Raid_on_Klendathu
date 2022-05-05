@@ -11,6 +11,7 @@ public class LaserStatusController : MonoBehaviour
     public float laserCoolingRate;
     public float laserHeatingRate;
     public bool LaserIsOverheated;
+    public float overHeatedTime;
 
     public Material coolMaterial;
     public Material overheatedMaterial;
@@ -78,7 +79,7 @@ public class LaserStatusController : MonoBehaviour
 
     IEnumerator OverheatedReaction()
     {
-        yield return new WaitForSeconds (2f);
+        yield return new WaitForSeconds (overHeatedTime);
         LaserIsOverheated=false;
         CantShoot?.Invoke(false);
         VisualFeedBack(false);

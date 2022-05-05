@@ -10,13 +10,14 @@ public class TimeLineManager : MonoBehaviour
 
         void OnEnable()
     {
-        cutsceneTimeline.stopped += OnCutscenePlayableDirectorStopped;
+        //cutsceneTimeline.stopped += OnCutscenePlayableDirectorStopped;
     }
     // Start is called before the first frame update
     void Start()
     {
-      playableTimeline.Stop();
-      cutsceneTimeline.Play();
+     // playableTimeline.Stop();
+     // cutsceneTimeline.Play();
+     playableTimeline.Play();
       
     }
 
