@@ -32,9 +32,10 @@ public class TestAsteroidGeneration : MonoBehaviour
           for (int i=0; i<quantity;i++)
         {
 
-            GameObject obj = Instantiate(model,Puntos3D(),Quaternion.identity,planet);  
-            asteroidsTransform.Add(obj.transform);
+            GameObject obj = Instantiate(model,Puntos3D(),Quaternion.identity,parent);  
+            //asteroidsTransform.Add(obj.transform);
         }
+        parent.transform.parent = planet.transform;
     }
     public Vector3 Puntos3D()
     {
@@ -79,7 +80,10 @@ public class TestAsteroidGeneration : MonoBehaviour
 
     void Update()
     {
-        
+                parent.transform.position = planet.transform.position;
+
+
     }
+
 
 }
