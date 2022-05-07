@@ -16,4 +16,10 @@ public class CursorHide : MonoBehaviour
     {
         
     }
+
+    public static void EnableCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 }
