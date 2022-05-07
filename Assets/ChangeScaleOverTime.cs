@@ -6,9 +6,9 @@ public class ChangeScaleOverTime : MonoBehaviour
 {
 
 
-float lerpDuration = 10f; 
-float startValue = 0.01f; 
-float endValue = 1f; 
+public float lerpDuration = 10f; 
+public float startValue = 0.5f; 
+public float endValue = 3f; 
 float valueToLerp;
 public Vector3 objectScale;
 void Start()

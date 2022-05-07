@@ -10,6 +10,8 @@ public class TestAsteroidGeneration : MonoBehaviour
     public Transform parent;
 
     public Transform planet;
+
+    
     public int quantity;
 
     public int radio;
@@ -20,6 +22,8 @@ public class TestAsteroidGeneration : MonoBehaviour
     private float xPos;
 
     public float offsetInPlane=2f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +36,11 @@ public class TestAsteroidGeneration : MonoBehaviour
           for (int i=0; i<quantity;i++)
         {
 
-            GameObject obj = Instantiate(model,Puntos3D(),Quaternion.identity,parent);  
+           // GameObject obj = Instantiate(model,Puntos3D(),Quaternion.identity,parent);  
             //asteroidsTransform.Add(obj.transform);
+            GameObject obj = Instantiate(model,Puntos3D(),Quaternion.identity,parent);  
         }
-        parent.transform.parent = planet.transform;
+        //parent.transform.parent = planet.transform;
     }
     public Vector3 Puntos3D()
     {
@@ -80,8 +85,9 @@ public class TestAsteroidGeneration : MonoBehaviour
 
     void Update()
     {
-                parent.transform.position = planet.transform.position;
+        //parent.transform.position = planet.transform.position;
 
+        transform.position = planet.transform.position;
 
     }
 

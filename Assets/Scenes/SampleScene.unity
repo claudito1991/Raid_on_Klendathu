@@ -930,6 +930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 394095135}
   - component: {fileID: 394095134}
+  - component: {fileID: 394095136}
   m_Layer: 0
   m_Name: TestRing
   m_TagString: Untagged
@@ -952,10 +953,10 @@ MonoBehaviour:
   model: {fileID: 8329134244928675850, guid: 83f1d2920e57ef848922bb7676b71af5, type: 3}
   parent: {fileID: 394095135}
   planet: {fileID: 532191617}
-  quantity: 1000
-  radio: 80
+  quantity: 650
+  radio: 10
   asteroidsTransform: []
-  offsetInPlane: 10
+  offsetInPlane: 2
 --- !u!4 &394095135
 Transform:
   m_ObjectHideFlags: 0
@@ -963,13 +964,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394095133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.15376198, y: 0, z: 0, w: 0.988108}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -17.69, y: 0, z: 0}
+--- !u!114 &394095136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394095133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220883f30d8f7464db75facb582b68e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpDuration: 50
+  startValue: 1
+  endValue: 10
+  objectScale: {x: 0, y: 0, z: 0}
 --- !u!1001 &435293559
 PrefabInstance:
   m_ObjectHideFlags: 0
