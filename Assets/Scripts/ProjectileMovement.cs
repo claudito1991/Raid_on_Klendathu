@@ -12,7 +12,9 @@ public class ProjectileMovement : MonoBehaviour
     public ParticleSystem explosionEnemigo;
     public float projectileSpeed;
 
-    public List<string> targetTags;
+    public string myTag;
+    //public List<string> targetTags;
+    public string targetTag;
     
     void OnEnable()
     {
@@ -41,21 +43,28 @@ public class ProjectileMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
         
     {
-        foreach(string tag in targetTags)
-        
-             if(other.CompareTag(tag))
-        {
+
+
+
+             if(other.CompareTag(myTag))
+             {
+                gameObject.SetActive(false);
+             }
+             else
+            {
+
             Instantiate(explosionEnemigo, other.transform.position, other.transform.rotation);
             Instantiate(explosionSFX,other.transform.position, other.transform.rotation);
 
             other.gameObject.SetActive(false);
             
-            if(tag == "Player")
-            {
-                PlayerHitted?.Invoke();
-            }
+                if(tag == "Player")
+                {
+                    Debug.Log(tag);
+                    PlayerHitted?.Invoke();
+                }
             
-        }
+            }
         
        
     }

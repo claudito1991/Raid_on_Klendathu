@@ -54,9 +54,8 @@ MonoBehaviour:
   explosionSFX: {fileID: 761771714548518184, guid: dd4f5aa47a6aa1b45b1d480f612e4e68, type: 3}
   explosionEnemigo: {fileID: 4252875116557948521, guid: 52685892f48ff254a844e1fc545f791e, type: 3}
   projectileSpeed: 30
-  targetTags:
-  - Player
-  - enemy
+  myTag: enemy
+  targetTag: Player
 --- !u!54 &3623613639549827441
 Rigidbody:
   m_ObjectHideFlags: 0

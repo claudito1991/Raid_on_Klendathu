@@ -23,11 +23,15 @@ public class TestAsteroidGeneration : MonoBehaviour
 
     public float offsetInPlane=2f;
 
+    private float xAngle;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        
         PopulateBelt();
     }
 

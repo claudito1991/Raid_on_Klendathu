@@ -27,7 +27,15 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerMovement>().GetComponent<PlayerMovement>();
+        if(player == null)
+        {
+
+        }
+        else
+        {
+            player = FindObjectOfType<PlayerMovement>().GetComponent<PlayerMovement>();
+        }
+       
     }
 
     // Update is called once per frame

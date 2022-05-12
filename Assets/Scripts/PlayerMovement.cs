@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float rangeX = 3.5f;
     public float rangeY=5f;
 
+    public Joystick joystick;
+
     public GameObject playerExplosionSFX;
     public ParticleSystem playerExplosion;
     public Transform playerPosition;
@@ -33,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         xThrow = Input.GetAxis("Horizontal");
         yThrow = Input.GetAxis("Vertical");
 
+        //xThrow = joystick.Horizontal;
+        //yThrow = joystick.Vertical;
         //Debug.Log($"Horizontal: {xThrow}");
         //Debug.Log($"Vertical: {yThrow}");
         

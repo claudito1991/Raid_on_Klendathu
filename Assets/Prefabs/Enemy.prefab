@@ -148,7 +148,7 @@ MonoBehaviour:
   enemyDamage: 100
   bulletPrefab: {fileID: 3623613639549827443, guid: edc7c4b201369b1428922a23c011a2e8, type: 3}
   enemyFirepoint: {fileID: 1966548863118106933}
-  coolDownTime: 0.2
+  coolDownTime: 0.5
 --- !u!65 &6984052154187053677
 BoxCollider:
   m_ObjectHideFlags: 0
