@@ -20,6 +20,8 @@ public class EnemyMovement : MonoBehaviour
     private float currentTime;
     [SerializeField]
     private float coolDownTime = 0.3f;
+
+    private ChangeScaleOverTime selfScale;
     
      // Move the object forward along its z axis 1 unit/second.
       
@@ -27,6 +29,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        selfScale = GetComponent<ChangeScaleOverTime>();
         if(player == null)
         {
 
@@ -41,7 +44,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          transform.Translate(Vector3.forward * Time.deltaTime*enemySpeed);
+        if(selfScale.scalingCompleted)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime*enemySpeed);
+        }
+       
       
     }
 

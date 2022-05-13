@@ -10,6 +10,7 @@ public class ProjectileMovement : MonoBehaviour
     public GameObject explosionSFX;
 
     public ParticleSystem explosionEnemigo;
+    public ParticleSystem explosionPlayer;
     public float projectileSpeed;
 
     public string myTag;
@@ -50,21 +51,28 @@ public class ProjectileMovement : MonoBehaviour
              {
                 gameObject.SetActive(false);
              }
-             else
+             else if (other.CompareTag("Player"))
             {
 
-            Instantiate(explosionEnemigo, other.transform.position, other.transform.rotation);
-            Instantiate(explosionSFX,other.transform.position, other.transform.rotation);
-
+            Instantiate(explosionPlayer, other.transform.position, other.transform.rotation);
             other.gameObject.SetActive(false);
-            
-                if(tag == "Player")
-                {
-                    Debug.Log(tag);
-                    PlayerHitted?.Invoke();
-                }
-            
+            PlayerHitted?.Invoke();
+            //Instantiate(explosionSFX,other.transform.position, other.transform.rotation);
             }
+            else if (other.CompareTag("enemy"))
+            {
+                Instantiate(explosionEnemigo, other.transform.position, other.transform.rotation);
+                other.gameObject.SetActive(false);
+            }
+         
+            
+                // if(other.CompareTag("Player") )
+                // {
+                //     Debug.Log(tag);
+                //     PlayerHitted?.Invoke();
+                // }
+            
+          
         
        
     }

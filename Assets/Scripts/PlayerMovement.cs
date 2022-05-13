@@ -5,16 +5,16 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float xThrow;
-    public float yThrow;
+    private float xThrow;
+    private float yThrow;
 
     public float speed = 10f;
-    public float rangeX = 3.5f;
-    public float rangeY=5f;
+    public float rangeX;
+    public float rangeY;
 
     public Joystick joystick;
 
-    public GameObject playerExplosionSFX;
+   // public GameObject playerExplosionSFX;
     public ParticleSystem playerExplosion;
     public Transform playerPosition;
     public static Action playerExploded;
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         float rawY = transform.localPosition.y + yThrow * speed * Time.deltaTime;
 
         float clampedXPos = Mathf.Clamp(rawX, -rangeX, rangeX);
-        float clampedYPos = Mathf.Clamp(rawY, -rangeY+7f, rangeY);
+        float clampedYPos = Mathf.Clamp(rawY, -rangeY+5, rangeY);
 
         transform.localPosition = new Vector3(
             clampedXPos,
@@ -64,6 +64,6 @@ public class PlayerMovement : MonoBehaviour
     {
        // playerExplosion.transform.position = playerPosition.position;
         //playerExplosion.Play();
-         playerExplosionSFX.SetActive(true);
+         //playerExplosionSFX.SetActive(true);
     }
 }
