@@ -17,6 +17,8 @@ public class PlayerShooting : MonoBehaviour
     public Transform RightFirePointPosition;
 
     public ParticleSystem LeftMuzzleFlash;
+
+    private FiringSoundTrackSelection shootingSFX;
     
     public ParticleSystem RightMuzzleFlash;
 
@@ -26,6 +28,7 @@ public class PlayerShooting : MonoBehaviour
     {
         //laserStatusBar.SetMaxTemp(maxLaserTemperature);
         //laserStatusBar.ImageColor(Color.blue);
+        shootingSFX = GetComponent<FiringSoundTrackSelection>();
     }
     void OnEnable()
     {
@@ -55,6 +58,7 @@ public class PlayerShooting : MonoBehaviour
         if (currentTime > coolDownTime && Input.GetMouseButton(0))
         {
             PlayerShoots?.Invoke();
+            shootingSFX.ShootingSound();
 
     
             GameObject obj = BulletPooler.current.GetPooledObject();

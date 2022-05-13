@@ -21,7 +21,6 @@ public class RandomMusic : MonoBehaviour
     {
        int index_of_music = UnityEngine.Random.Range(0, audios.Count-1);
        AudioClip track_selected = audios[index_of_music];
-       Debug.Log(track_selected);
-        return track_selected;
+       return track_selected;
     }
 }

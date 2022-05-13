@@ -36,7 +36,7 @@ public IEnumerator Lerp()
         while (timeElapsed < lerpDuration)
         {
             valueToLerp = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
-            Debug.Log(timeElapsed);
+            //Debug.Log(timeElapsed);
             timeElapsed += Time.deltaTime;
             transform.localScale = new Vector3(objectScale.x*valueToLerp,  objectScale.y*valueToLerp, objectScale.z*valueToLerp);
             yield return null;
