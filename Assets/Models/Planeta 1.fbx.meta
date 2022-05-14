@@ -1,8 +1,23 @@
 fileFormatVersion: 2
-guid: 32d51e03b597e454ea89abf4ce36b688
+guid: 054c8b49f4378074e9148ef0c80c3a87
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 1675531793079535532
+    second: Armature.008|Armature.001Action.001
+  - first:
+      74: 2433080871190810255
+    second: Armature.008|Armature.004Action
+  - first:
+      74: -8543730622077933690
+    second: Armature.008|Armature.005Action
+  - first:
+      74: 899012397967054675
+    second: Armature.008|Armature.008Action
+  - first:
+      74: 2250708186670378148
+    second: Armature.008|ArmatureAction.004
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -34,7 +49,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 10
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -65,7 +80,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 10
+    normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
@@ -85,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 10
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

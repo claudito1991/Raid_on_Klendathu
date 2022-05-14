@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: 32d51e03b597e454ea89abf4ce36b688
+guid: f86cd4206fe9d85468b16401810af44b
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects: {}
+  internalIDToNameTable:
+  - first:
+      74: 1675531793079535532
+    second: Armature.008|Armature.001Action.001
+  - first:
+      74: 2433080871190810255
+    second: Armature.008|Armature.004Action
+  - first:
+      74: -8543730622077933690
+    second: Armature.008|Armature.005Action
+  - first:
+      74: 899012397967054675
+    second: Armature.008|Armature.008Action
+  - first:
+      74: 2250708186670378148
+    second: Armature.008|ArmatureAction.004
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: 83cdfb0d1e6c2334fb707b4e6e0bd061, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.016
+    second: {fileID: 2100000, guid: be215bb6ff07687499c77d51f5845485, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -34,7 +59,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 10
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -65,7 +90,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 10
+    normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
@@ -85,7 +110,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 10
+    globalScale: 0.001
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

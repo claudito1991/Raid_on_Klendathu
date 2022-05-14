@@ -19,10 +19,7 @@ public class InGameMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
-        {
-            menuJuego.SetActive(true);
-        }
+
     }
 
     public void PlayGame()
@@ -32,7 +29,9 @@ public class InGameMenu : MonoBehaviour
 
     public void QuitApplication()
     {
-        Application.Quit();
+        //Application.Quit();
+
+        Screen.fullScreen = false;
     }
 
    

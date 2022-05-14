@@ -15,7 +15,7 @@ public class InGameMenuShow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool Show;
+      
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             show = !show;
