@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     public Slider slider;
-    public int maxHealth = 1000;
+    public int maxHealth;
 
     void Start()
     {
-        SetMaxHealth(maxHealth);
+        //SetMaxHealth(maxHealth);
     }
     public  void SetMaxHealth(int health)
     {

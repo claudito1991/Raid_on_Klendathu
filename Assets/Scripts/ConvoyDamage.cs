@@ -17,6 +17,8 @@ public class ConvoyDamage : MonoBehaviour
 void Start()
 {
     totalHealth = maxHealth;
+    healthBar.SetMaxHealth(totalHealth);
+
     
 }
 void OnEnable()
