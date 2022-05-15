@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float rangeX;
     public float rangeY;
 
-    public Joystick joystick;
+    //public Joystick joystick;
 
    // public GameObject playerExplosionSFX;
     public ParticleSystem playerExplosion;
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
        
         playerExploded?.Invoke();
-        playerExplosion.transform.position = playerPosition.position;
+        //playerExplosion.transform.position = playerPosition.position;
        
     }
 

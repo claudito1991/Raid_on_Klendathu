@@ -13,8 +13,11 @@ public class EnemyMovement : MonoBehaviour
 
     public Transform enemyFirepoint;
 
+    public GameObject playerExplosion;
 
-    private PlayerMovement player;
+
+    public GameObject player;
+    private PlayerMovement playerMovement;
     public static Action<int> enemyCatched;
 
     private float currentTime;
@@ -36,9 +39,15 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-            player = FindObjectOfType<PlayerMovement>().GetComponent<PlayerMovement>();
+            //playerMovement =FindObjectOfType<PlayerMovement>();
+            playerMovement = player.GetComponentInChildren<PlayerMovement>();
         }
        
+    }
+
+    void OnEnable()
+    {
+
     }
 
     // Update is called once per frame
@@ -57,7 +66,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            player.PlayerExplosion();
+            playerMovement.PlayerExplosion();
+            Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
             other.gameObject.SetActive(false);
         }
 
@@ -110,4 +120,21 @@ public class EnemyMovement : MonoBehaviour
             return false;
         }
     }
+
+    public void DieSequence()
+    {
+        Debug.Log("I died");
+        EnemyExplosionPooling();
+        gameObject.SetActive(false);
+    }
+
+     public void EnemyExplosionPooling()
+    {
+        GameObject explosion = EnemyExplosionPooler.current.GetPooledObject();
+                if(explosion == null) return;
+                explosion.transform.position = transform.position;
+                explosion.transform.rotation = transform.rotation;
+                explosion.SetActive(true);
+    }
+
 }

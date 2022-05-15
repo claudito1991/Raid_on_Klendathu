@@ -24,8 +24,8 @@ public class CheckIsAlive : MonoBehaviour
         currentTime += Time.deltaTime;
         if(thisParticle.main.duration<currentTime)
         {
-            Debug.Log(thisParticle.main.duration);
-            Debug.Log(currentTime);
+           // Debug.Log(thisParticle.main.duration);
+            //Debug.Log(currentTime);
             gameObject.SetActive(false);
         }
     }   

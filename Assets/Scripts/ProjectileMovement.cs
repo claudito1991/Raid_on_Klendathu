@@ -54,7 +54,6 @@ public class ProjectileMovement : MonoBehaviour
              else if (other.CompareTag("Player"))
             {
 
-
             Instantiate(explosionPlayer, other.transform.position, other.transform.rotation);
             other.gameObject.SetActive(false);
             PlayerHitted?.Invoke();
@@ -65,6 +64,7 @@ public class ProjectileMovement : MonoBehaviour
                 EnemyExplosionPooling();
                 //Instantiate(explosionEnemigo, other.transform.position, other.transform.rotation);
                 other.gameObject.SetActive(false);
+                gameObject.SetActive(false);
             }
          
             

@@ -151,6 +151,8 @@ MonoBehaviour:
   enemyDamage: 100
   bulletPrefab: {fileID: 3623613639549827443, guid: edc7c4b201369b1428922a23c011a2e8, type: 3}
   enemyFirepoint: {fileID: 1966548863118106933}
+  playerExplosion: {fileID: 4252875116557948438, guid: 52685892f48ff254a844e1fc545f791e, type: 3}
+  player: {fileID: 8641401778539972420, guid: 3fa523b11a896864a8e2d5d28ce0e93c, type: 3}
   coolDownTime: 0.5
 --- !u!65 &6984052154187053677
 BoxCollider:
